@@ -1,0 +1,422 @@
+/* Reset CSS */
+@charset "UTF-8";
+/*
+
+  Con este reset vamos a resolver:
+    👉 Unificar el uso de Custom Properties
+    👉 Problemas de box-model más generales
+    👉 Problemas con imagenes, vídeos e iconos svg
+    👉 Problemas con tipografías y etiquetas input en formularios
+    👉 Unificar la tipografía de todas las etiquetas de una web
+
+*/
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* Opcional */
+/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  /* opcional */
+  line-height: 1.4em;
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+*{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header{
+    width: 100%;
+    background-color: #3498db;
+    padding: 1em;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header .img{
+  width: 150px;
+    
+}
+
+
+.header .button{
+    display: none;
+}
+
+.header .svg{
+    width: 2em;
+    height: 2em;
+    fill: white;
+}
+
+
+.header .ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .li{
+    margin: 0 .5em;
+    list-style: none;
+
+    display: flex;
+}
+
+.header .li a{
+    padding-left: 5px;
+}
+
+@media screen and (max-width:650px){
+
+    .header .nav{
+        width: 100%;
+        /* display: none; */
+        height: 0;
+        pointer-events: none;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .header .nav.activo{
+        /* display: block; */
+        height: 50vh;
+        pointer-events: auto;
+    }
+
+    .header .button{
+        display: block; 
+        cursor: pointer;
+    }
+
+    .header .ul{
+        flex-direction: column;
+    }
+
+    .header .li{
+        flex-flow: column;
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .header .li a{
+        padding-top: 5px;
+    }
+}
+/* Animación */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+body{
+    background-color: #c2d3d8;
+  }
+  .titulo{
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1.5s ease-out 0.5s forwards;
+      padding: 20px;
+  }
+  #tit{
+      font-size: 58px;
+      font-weight: 600;
+      color: #00989e;
+      text-align: center;
+      line-height: 1;
+  }
+  @media screen and (max-width: 650px){
+    #tit{
+        font-size: 40px;
+    }
+}
+
+.h3{
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+/*Formulario */
+
+
+
+.formulario {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; 
+  max-width: 900px;
+  display: flex;
+  margin: 20px auto;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #00989e;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario input, textarea{
+  width: 100%;
+  padding: 7px;
+  margin: 16px 0;
+  
+  border-bottom: 3px solid lightblue;
+  background: transparent;
+
+}
+
+.formulario form{
+  width: 100%;
+}
+
+.formulario input:focus{
+  background: linear-gradient(to bottom, transparent, lightblue);
+  outline: none;
+  border: 2px groove lightblue;
+}
+.formulario textarea{
+  min-height: 150px;
+  resize: none;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.formulario input[type="submit"]{
+  background-color: #094;
+  border-bottom: none;
+  padding: 12px;
+}
+
+.formulario input[type="submit"]:hover{
+  background-color: #072;
+  border-bottom: none;
+  padding: 12px;
+}
+
+.formulario input[type="submit"]:focus{
+  background: #094;
+}
+
+.formulario input[type="submit"]:active{
+  background: linear-gradient(to bottom, #072, #050);
+}
+
+/* Media queries para hacer el formulario responsive */
+@media screen and (max-width: 650px) {
+  .formulario {
+    width: 90%; /* Ajusta el ancho en pantallas pequeñas */
+  }
+}
+
+/* Boton regresar al comienzo */
+button#btnVolverArriba {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Ocultar el botón por defecto */
+}
+
+button#btnVolverArriba:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
+.footer{
+  width: 100%;
+  height: 80px;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.footer p{
+  font-weight: 500px;
+}
