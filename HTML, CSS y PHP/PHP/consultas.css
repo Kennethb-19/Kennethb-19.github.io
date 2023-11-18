@@ -388,6 +388,7 @@ button:hover {
 @media screen and (max-width: 650px) {
   .formulario {
     width: 90%; /* Ajusta el ancho en pantallas pequeñas */
+    color: #393939;
   }
 }
 

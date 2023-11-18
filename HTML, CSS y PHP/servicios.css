@@ -398,6 +398,7 @@ body{
     }
     .marketing .zona .p{
       text-align: center;
+      color: #393939;
     }
     .marketing .zona2{
       flex-wrap: wrap;
@@ -410,6 +411,7 @@ body{
     }
     .marketing .zona2 .p{
       text-align: center;
+      color: #393939;
     }
 }
 
