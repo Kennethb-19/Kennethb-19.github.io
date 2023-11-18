@@ -6,6 +6,7 @@
 
 
     <link rel="stylesheet" href="consultas.css">
+    <link rel="shortcut icon" href="./Images/CONSULTORIO SANTA APOLONIA.png">
     <script src="https://kit.fontawesome.com/5abdef1bef.js" crossorigin="anonymous"></script>
     <script defer src="app.js"></script>
     <title>Consultas</title>
