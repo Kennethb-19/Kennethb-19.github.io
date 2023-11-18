@@ -15,7 +15,7 @@
 <header class="header">
 
     <h1 class="h1">
-        <a href="index.html">
+        <a href="../index.html">
             <img class="img" src="../../Images/CONSULTORIO SANTA APOLONIA.png" alt="">
         </a> 
     </h1>
