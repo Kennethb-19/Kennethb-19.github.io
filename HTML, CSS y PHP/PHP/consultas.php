@@ -63,17 +63,6 @@
 
     </section>
 
-    <script>
-        function validarSoloLetras(input) {
-          // Eliminar caracteres no alfabéticos
-          input.value = input.value.replace(/[^a-zA-Z]/g, '');
-        }
-
-        function validarSoloNumeros(input) {
-        // Eliminar caracteres no numéricos
-        input.value = input.value.replace(/\D/g, '');
-        }
-    </script>
 
     <button id="btnVolverArriba"><i class="fa-solid fa-arrow-up"></i></button>
 
