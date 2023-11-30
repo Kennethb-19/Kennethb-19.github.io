@@ -8,7 +8,7 @@ if (isset($_POST['enviar'])){
         $asunto = $_POST["asunto"];
         $correo = $_POST['correo'];
         $mensaje = $_POST['mensaje'];
-        $header = "From: $correo". "\r\n";
+        $header = "From:". "\r\n";
         $header .= "Reply-To: noreply@example.com". "\r\n";
         $header .= "X-Mailer: PHP/". phpversion();
         $mail = @mail($destinatario,$name,$asunto,$mensaje,$header);

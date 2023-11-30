@@ -15,7 +15,7 @@
 <header class="header">
 
     <h1 class="h1">
-        <a href="../index.html">
+        <a href="../../index.html">
             <img class="img" src="../../Images/CONSULTORIO SANTA APOLONIA.png" alt="">
         </a> 
     </h1>
@@ -28,9 +28,9 @@
 
     <nav class="nav">
         <ul class="ul">
-            <li class="li"> <i class="fas fa-user-friends"></i><a href="#"class="a" >Servicios</a></li>
-            <li class="li"> <i class="fa-solid fa-message"></i><a href="PHP/consultas.php"class="a" >Consultas</a></li>
-            <li class="li"> <i class="fa-solid fa-location-dot"></i><a href="localizacion.html"class="a">Localización</a></li>
+            <li class="li"> <i class="fas fa-user-friends"></i><a href="../servicios.html"class="a" >Servicios</a></li>
+            <li class="li"> <i class="fa-solid fa-message"></i><a href="consultas.php"class="a" >Consultas</a></li>
+            <li class="li"> <i class="fa-solid fa-location-dot"></i><a href="../localizacion.html"class="a">Localización</a></li>
         </ul>
     
     </nav>
